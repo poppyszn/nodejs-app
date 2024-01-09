@@ -22,7 +22,7 @@ jobs:
         
   deploy:
     needs: build
-    runs-on: [githubworkflow]
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
         run: docker image pull preciousokpor/cicd:latest
