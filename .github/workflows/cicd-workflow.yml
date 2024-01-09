@@ -18,14 +18,14 @@ jobs:
       - name: Build docker image
         run: docker build -t cicd .
       - name: Publish image to docker hub
-        run: docker push cicd:latest
+        run: docker image push cicd:latest
         
   deploy:
     needs: build
     runs-on: [AWS EC2]
     steps:
       - name: Pull image from docker hub
-        run: docker pull cicd:latest
+        run: docker image pull cicd:latest
       - name: Delete old container
         run: docker rm -f nodejs-app-container
       - name: Run docker container
