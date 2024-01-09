@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
-        run: docker build -t cicd .
+        run: docker build -t preciousokpor/cicd:latest .
       - name: Publish image to docker hub
         run: docker push preciousokpor/cicd:latest
         
