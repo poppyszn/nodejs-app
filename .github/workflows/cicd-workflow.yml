@@ -16,7 +16,7 @@ jobs:
         run: docker build -t cicd/nodejs-app .
       - name: Publish image to docker hub
         run: docker push cicd/nodejs-app:latest
-
+        
   deploy:
     needs: build
     runs-on: [AWS EC2]
